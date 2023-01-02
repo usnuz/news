@@ -1,0 +1,49 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet"/>
+          <div class="main-content-container container-fluid px-4">
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="row">
+                <div class="page-header row no-gutters py-4">
+                  <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+                    <span class="text-uppercase page-subtitle">Blog Posts</span>
+                    <h3 class="page-title">Add News</h3>
+                  </div>
+                </div>
+                <div class="col-lg-9 col-md-12">
+                  <!-- Add New Post Form -->
+                  <div class="card card-small mb-3">
+                    <div class="card-body">
+                      <input name="title" class="form-control form-control-lg mb-3" type="text" placeholder="Your Post Title">
+                      <div class="form-outline mb-4">
+                        <textarea name="body" class="form-control" id="textAreaExample6" rows="4"></textarea>
+                        <label class="form-label" for="textAreaExample6">100% width of the parent</label>
+                      </div>
+                      <input name="img" type="file" class="form-control" id="customFile" />
+                    </div>
+                  </div>
+                  <!-- / Add New Post Form -->
+                </div>
+                <div class="col-lg-3 col-md-12">
+                  <div class="card card-small mb-3">
+                    <div class="card-header border-bottom">
+                      <h6 class="m-0">Categories</h6>
+                    </div>
+                    <div class="card-body p-0">
+                      <select name="category" class="form-select" required>
+                        {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.name }}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                    <br>
+                    <input type="submit" value="Publish">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+{% endblock %}

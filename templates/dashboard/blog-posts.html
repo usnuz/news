@@ -1,0 +1,141 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+{% load static %}
+          <div class="main-content-container container-fluid px-4">
+            <div class="page-header row no-gutters py-4">
+              <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+                <span class="text-uppercase page-subtitle">Components</span>
+                <h3 class="page-title">Latest News</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card card-small card-post card-post--1">
+                  <div class="card-post__image" style="background-image: url('{{ uz.img.url }}');">
+                    <a href="#" class="card-post__category badge badge-pill badge-dark">{{ uz.category.name }}</a>
+                    <div class="card-post__author d-flex">
+                      {% if uz.user.avatar %}
+                      <a href="{% url 'chat-url' uz.user.id %}" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('{{ uz.user.avatar.url }}');">Written by {{ uz.user.username }}</a>
+                      {% else %}
+                      <a href="{% url 'chat-url' uz.user.id %}" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('{% static 'dashboard/usr.png' %}');">Written by {{ uz.user.username }}</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a class="text-fiord-blue" href="{% url 'single-url' uz.id %}">{{ uz.title }}</a>
+                    </h5>
+                    <p class="card-text mb-3">
+                      {{ uz.body|truncatechars:100 }}
+                    </p>
+                    <span class="text-muted">{{ uz.date_updated }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card card-small card-post card-post--1">
+                  <div class="card-post__image" style="background-image: url('{{ jahon.img.url }}');">
+                    <a href="#" class="card-post__category badge badge-pill badge-info">{{ jahon.category.name }}</a>
+                    <div class="card-post__author d-flex">
+                      {% if jahon.user.avatar %}
+                      <a href="{% url 'chat-url' jahon.user.id %}" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('{{ jahon.user.avatar.url }}');">Written by {{ jahon.user.username }}</a>
+                      {% else %}
+                      <a href="{% url 'chat-url' jahon.user.id %}" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('{% static 'dashboard/usr.png' %}');">Written by {{ jahon.user.username }}</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a class="text-fiord-blue" href="{% url 'single-url' jahon.id %}">{{ jahon.title }}</a>
+                    </h5>
+                    <p class="card-text d-inline-block mb-3">
+                      {{ jahon.body|truncatechars:100 }}
+                    </p>
+                    <span class="text-muted">{{ jahon.date_created }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card card-small card-post card-post--1">
+                  <div class="card-post__image" style="background-image: url('{{ siyosiy.img.url }}');">
+                    <a href="#" class="card-post__category badge badge-pill badge-primary">{{ siyosiy.category.name }}</a>
+                    <div class="card-post__author d-flex">
+                      {% if siyosiy.user.avatar %}
+                      <a href="{% url 'chat-url' siyosiy.user.id %}" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('{{ soyosiy.user.avatar.url }}');">Written by {{ siyosiy.user.username }}</a>
+                      {% else %}
+                      <a href="{% url 'chat-url' siyosiy.user.id %}" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('{% static 'dashboard/usr.png' %}');">Written by {{ siyosiy.user.username }}</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a class="text-fiord-blue" href="{% url 'single-url' siyosiy.id %}">{{ siyosiy.title }}</a>
+                    </h5>
+                    <p class="card-text d-inline-block mb-3">
+                      {{ siyosiy.body|truncatechars:100 }}
+                    </p>
+                    <span class="text-muted">{{ siyosiy.date_created }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card card-small card-post card-post--1">
+                  <div class="card-post__image" style="background-image: url('{{ texnologiya.img.url }}');">
+                    <a href="#" class="card-post__category badge badge-pill badge-warning">{{ texnologiya.category.name }}</a>
+                    <div class="card-post__author d-flex">
+                      {% if texnologiya.user.avatar %}
+                      <a href="{% url 'chat-url' texnologiya.user.id %}" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('{{ texnologiya.user.avatar.url }}');">Written by {{ texnologiya.user.username }}</a>
+                      {% else %}
+                      <a href="{% url 'chat-url' texnologiya.user.id %}" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('{% static 'dashboard/usr.png' %}');">Written by {{ texnologiya.user.username }}</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a class="text-fiord-blue" href="{% url 'single-url' texnologiya.id %}">{{ texnologiya.title }}</a>
+                    </h5>
+                    <p class="card-text mb-3">
+                      {{ texnologiya.body|truncatechars:100 }}
+                    </p>
+                    <span class="text-muted">{{ texnologiya.date_created }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="page-header row no-gutters py-4">
+              <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+                <span class="text-uppercase page-subtitle">Components</span>
+                <h3 class="page-title">Popular News</h3>
+              </div>
+            </div>
+            <div class="row">
+              {% for popular in popular_news %}
+              <div class="col-lg-6 col-sm-12 mb-4">
+                <div class="card card-small card-post card-post card-post--1">
+                  <div class="card-post__image" style="background-image: url('{{ popular.img.url }}');">
+                    <a href="#" class="card-post__category badge badge-pill badge-info">{{ popular.cartegory.name }}</a>
+                    <div class="card-post__author d-flex">
+                      {% if popular.user.avatar %}
+                      <a href="{% url 'chat-url' popular.user.id %}" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('{{ popular.user.avatar.url }}');">Written by {{ popular.user.username }}</a>
+                      {% else %}
+                      <a href="{% url 'chat-url' popular.user.id %}" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('{% static 'dashboard/usr.png' %}');">Written by {{ popular.user.username }}</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a class="text-fiord-blue" href="{% url 'single-url' popular.id %}">{{ popular.title }}</a>
+                    </h5>
+                    <p class="card-text mb-3">
+                      {{ popular.body|truncatechars:100 }}
+                    </p>
+                    <span class="text-muted">{{ popular.date_created }}</span>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+{% endblock %}
